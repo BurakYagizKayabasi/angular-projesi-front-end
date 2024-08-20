@@ -21,7 +21,11 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "baseUrl": "./",  // Dosya yolları için base url ayarı
+    "paths": {
+      "src/*": ["src/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -30,3 +34,4 @@
     "strictTemplates": true
   }
 }
+

@@ -1,0 +1,27 @@
+<div *ngIf="customers.length > 0; else noData">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Balance</th>
+        <th>Age</th>
+        <th>ID Number</th>
+        <th>Account Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <td>{{ customer.musteriName }}</td>
+        <td>{{ customer.musteriSurname }}</td>
+        <td>{{ customer.musteriBakiye | currency }}</td>
+        <td>{{ customer.musteriAge }}</td>
+        <td>{{ customer.musteriTcNo }}</td>
+        <td>{{ customer.musteriHesapNo }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #noData>
+  <p>No customer data available.</p>
+</ng-template>

@@ -1,0 +1,58 @@
+/* Giriş ekranı container'ı */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #00bcd4, #009688);
+    padding: 20px;
+  }
+  
+  /* Login kartı stili */
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Kart başlığı ve alt başlık */
+  mat-card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+  }
+  
+  mat-card-title {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  mat-card-subtitle {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Form alanları ve düğme */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  .login-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    width: 100%;
+  }
+  
