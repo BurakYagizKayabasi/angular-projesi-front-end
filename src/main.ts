@@ -1,27 +1,25 @@
-import { bootstrapApplication, BrowserModule } from '@angular/platform-browser';
+import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http'; // HttpClient için gerekli
 import { provideAnimations } from '@angular/platform-browser/animations'; // Animasyonlar için gerekli
-import { CommonModule } from '@angular/common'; // CommonModule'ı ekleyin
 
 import { AppComponent } from './app/app.component';
 import { LoginComponent } from './app/login/login.component';
-import { CustomerListComponent } from './app/customer-list/customer-list.component'; // Müşteri listesi bileşenini import edin
+import { MainMenuComponent } from './app/main-menu/main-menu.component'; // Ana menü bileşenini import edin
+import { AccountComponent } from './app/account/account.component'; // Hesap bileşenini import edin
 
 // Yönlendirme yapılandırması
 const routes = [
   { path: '', component: LoginComponent },
-  { path: 'customers', component: CustomerListComponent }
-  // Diğer yönlendirmeleri buraya ekleyebilirsiniz
+  { path: 'main-menu', component: MainMenuComponent }, // Ana menü bileşeni için rota
+  { path: 'account', component: AccountComponent } // Hesap bilgileri için rota
 ];
 
 const appConfig = {
   providers: [
     provideRouter(routes), // Yönlendirme yapılandırmasını burada sağlıyoruz
     provideHttpClient(),   // HttpClient için gerekli
-    provideAnimations(),   // Animasyonlar için gerekli
-    CommonModule, // CommonModule'ı sağlayıcılar listesine ekleyin
-    BrowserModule
+    provideAnimations()    // Animasyonlar için gerekli
   ]
 };
 

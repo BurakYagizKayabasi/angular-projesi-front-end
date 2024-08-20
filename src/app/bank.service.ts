@@ -7,27 +7,18 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class BankService {
-  private apiUrl = `${environment.apiUrl}/customers`;
-  private userApiUrl = `${environment.apiUrl}/users`;
+  private apiUrl = `${environment.apiUrl}`;
 
   constructor(private http: HttpClient) { }
 
-  // Tüm müşterileri almak için
-  getCustomers(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(this.apiUrl);
+  getAccountDetails(): Observable<any> {
+    // Kullanıcı ID'sini buradan alabilir veya kullanıcıyı kimlik doğrulama ile alabilirsiniz
+    const userId = 1; // Örnek ID
+    return this.http.get<any>(`${this.apiUrl}/users/${userId}`);
   }
 
-  // Belirli bir kullanıcıyı ID ile almak için
-  getUserById(userId: number): Observable<Customer> {
-    return this.http.get<Customer>(`${this.userApiUrl}/${userId}`);
+  getTransactions(): Observable<any[]> {
+    const userId = 1; // Örnek ID
+    return this.http.get<any[]>(`${this.apiUrl}/transactions/${userId}`);
   }
-}
-
-export interface Customer {
-  musteriName: string;
-  musteriSurname: string;
-  musteriBakiye: number;
-  musteriAge: number;
-  musteriTcNo: string;
-  musteriHesapNo: string;
 }

@@ -1,0 +1,8 @@
+<div *ngIf="accountDetails; else noData">
+    <p><strong>Balance:</strong> {{ accountDetails.balance | currency:'USD' }}</p>
+    <p><strong>Account Number:</strong> {{ accountDetails.accountNumber }}</p>
+  </div>
+  <ng-template #noData>
+    <p>No account details available.</p>
+  </ng-template>
+  

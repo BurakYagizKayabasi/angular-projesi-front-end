@@ -43,7 +43,7 @@ export class LoginComponent {
     ).subscribe(response => {
       if (response.success) {
         // Başarılı girişten sonra yönlendirme
-        this.router.navigate(['/customers']); // Örneğin, bir dashboard sayfasına yönlendirin
+        this.router.navigate(['/main-menu']); // Örneğin, bir dashboard sayfasına yönlendirin
       } else {
         alert('Kullanıcı adı veya şifre yanlış.');
       }
